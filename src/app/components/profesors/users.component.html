@@ -1,0 +1,53 @@
+<div class="modal-header">
+  <h4 class="modal-title" i18n="Modal Header | title">Elegir Profesor</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <table class="table table-striped">
+    <thead>
+    <tr class="text-center">
+      <th scope="col">#</th>
+      <th scope="col">Email</th>
+      <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="text-center" *ngFor="let user of users | async | filterRole:filter; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>
+        {{user.email}}
+      </td>
+      <td>
+        <!--        <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">-->
+        <!--          <button class="btn btn-sm btn-outline-primary" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">Acciones</button>-->
+        <!--          <div ngbDropdownMenu aria-labelledby="dropdownManual">-->
+        <!--            <button ngbDropdownItem (click)="seleccionar(user)">Mark as Done</button>-->
+        <!--            <button ngbDropdownItem (click)="acceptAppointment(appointment)">Accept</button>-->
+        <!--            <button ngbDropdownItem (click)="cancelAppointment(appointment)">Cancel</button>-->
+        <!--            &lt;!&ndash;          <div *ngIf="appointment.done && patient"><button ngbDropdownItem (click)="showReview(appointment)">Show review</button>&ndash;&gt;-->
+        <!--            &lt;!&ndash;          <button ngbDropdownItem (click)="writeReview()">Write review</button></div>&ndash;&gt;-->
+        <!--            <div *ngIf="appointment.done">-->
+        <!--              <div *ngIf="appointment.questionsAndAnswers"><button ngbDropdownItem (click)="showComment(appointment)">Show comment</button></div>-->
+        <!--              <button ngbDropdownItem (click)="writeReview(appointment)">Write review</button></div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <button class="btn btn-sm btn-outline-primary" (click)="selectUser(user)">Seleccionar</button>
+        <!--      <button type="button" class="btn btn-sm btn-group-sm btn-secondary" (click)="saveAppointment(appointment)">Accept</button>-->
+        <!--      <button type="button" class="btn btn-sm btn-group-sm btn-success" (click)="saveAppointment(appointment)">Done</button>-->
+        <!--      <button type="button" class="btn btn-sm btn-group-sm btn-warning" (click)="saveAppointment(appointment)">Cancel</button>-->
+      </td>
+
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+<div class="modal-footer">
+
+  <!--  <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">Submit</button>-->
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+
+</div>
+
