@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {UsersService} from '../../services/users.service';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {User} from '../../model/user';
 import {Observable} from 'rxjs';
 
@@ -16,7 +15,7 @@ export class UsersComponent implements OnInit, OnChanges {
   @Output() selectedUsers = new EventEmitter<User>();
 
 
-  constructor(private usersService: UsersService, public activeModal: NgbActiveModal) {
+  constructor(private usersService: UsersService) {
   }
 
   ngOnInit(): void {

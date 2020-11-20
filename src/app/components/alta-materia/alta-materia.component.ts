@@ -10,8 +10,8 @@ import {Materia} from '../../model/materia';
   styleUrls: ['./alta-materia.component.css']
 })
 export class AltaMateriaComponent implements OnInit {
-  cuatrimestres: ['1º Cuatri', '2º Cuatri', '3º Cuatri', '4º Cuatri'];
-  years: ['2020', '2021', '2022', '2023', '2024', '2025', '2026'];
+  cuatrimestres =  ['1º Cuatri', '2º Cuatri', '3º Cuatri', '4º Cuatri'];
+  years =  ['2020', '2021', '2022', '2023', '2024', '2025', '2026'];
   profesor = 'profesor';
   materiaForm: FormGroup;
 
@@ -28,7 +28,9 @@ export class AltaMateriaComponent implements OnInit {
   }
 
   setSelectedProfesor({email}: User) {
-    this.materiaForm.setValue({email});
+    this.materiaForm.patchValue({email});
+
+
   }
 
   submit() {

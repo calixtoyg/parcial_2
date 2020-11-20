@@ -42,8 +42,9 @@ export class LoginComponent implements OnInit, OnDestroy {
             this.router.navigate(['/welcome/alumno']);
           } else if (role === 'profesor') {
             this.router.navigate(['/welcome/profesor']);
+          } else if (role === 'admin') {
+            return this.router.navigate(['/alta/materia']);
           }
-          return this.router.navigate(['welcome']);
         })
         .catch((error) => {
           this.alertSubscription.next({message: error, successful: false});

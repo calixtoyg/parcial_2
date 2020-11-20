@@ -182,13 +182,13 @@ export class AuthenticationService {
   // }
 
   isAlumno(): boolean {
-     return this.role === 'alumno';
+     return localStorage.getItem('role') === 'alumno';
   }
   isProfesor(): boolean {
-     return this.role === 'profesor';
+     return localStorage.getItem('role') === 'profesor';
   }
 
   isAdmin() {
-    return this.role === 'admin';
+    return localStorage.getItem('role') === 'admin';
   }
 }

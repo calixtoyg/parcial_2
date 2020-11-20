@@ -8,13 +8,14 @@ import {WelcomeProfesorComponent} from './components/welcome-profesor/welcome-pr
 import {WelcomeAlumnoComponent} from './components/welcome-alumno/welcome-alumno.component';
 import {LoginComponent} from './components/login/login.component';
 import {AdminGuardService} from './services/admin-guard.service';
+import {AltaMateriaComponent} from './components/alta-materia/alta-materia.component';
 
 const routes: Routes = [
   {path: 'welcome', component: WelcomeComponent, canActivate: [AuthGuardService]},
   {path: 'welcome/profesor', component: WelcomeProfesorComponent, canActivate: [AuthGuardService]},
   {path: 'welcome/alumno', component: WelcomeAlumnoComponent, canActivate: [AuthGuardService]},
   {path: 'alta/usuario', component: AltaUsuarioComponent, canActivate: [AuthGuardService]},
-  {path: 'alta/materia', component: AltaUsuarioComponent, canActivate: [AuthGuardService, AdminGuardService]},
+  {path: 'alta/materia', component: AltaMateriaComponent, canActivate: [AuthGuardService, AdminGuardService]},
   {path: 'login', component: LoginComponent}
 ];
 
